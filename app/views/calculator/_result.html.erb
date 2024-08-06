@@ -1,0 +1,16 @@
+<%= turbo_frame_tag "result" do %>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6 text-center">Result</h1>
+
+    <div class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <p class="mb-4">
+        <span class="font-semibold">Your daily calorie needs (TDEE):</span>
+        <span class="text-lg text-indigo-600"><%= @tdee %> calories</span>
+      </p>
+      <p class="mb-6">
+        <span class="font-semibold">Recommended daily calorie intake for weight loss:</span>
+        <span class="text-lg text-green-600"><%= @weight_loss_calories %> calories</span>
+      </p>
+    </div>
+  </div>
+<% end %>
