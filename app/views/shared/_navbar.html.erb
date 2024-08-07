@@ -1,0 +1,18 @@
+<nav class="bg-indigo-600">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <span class="text-white font-bold text-xl">KCAL</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <%= link_to "Calories Calculator", root_path, class: "#{current_page?(root_path) ? 'bg-indigo-700 text-white' : 'text-white hover:bg-indigo-500 hover:bg-opacity-75'} px-3 py-2 rounded-md text-sm font-medium" %>
+            <%= link_to "BMI Calculator", bmi_path, class: "#{current_page?(bmi_path) ? 'bg-indigo-700 text-white' : 'text-white hover:bg-indigo-500 hover:bg-opacity-75'} px-3 py-2 rounded-md text-sm font-medium" %>
+            <%= link_to "Ideal Weight Calculator", ideal_weight_path, class: "#{current_page?(ideal_weight_path) ? 'bg-indigo-700 text-white' : 'text-white hover:bg-indigo-500 hover:bg-opacity-75'} px-3 py-2 rounded-md text-sm font-medium" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

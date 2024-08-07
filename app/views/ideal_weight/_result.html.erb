@@ -1,0 +1,12 @@
+<%= turbo_frame_tag "ideal-weight-result" do %>
+  <div class="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <h2 class="text-2xl font-bold mb-4 text-center">Result</h2>
+    <p class="mb-4">
+      <span class="font-semibold">Your ideal weight:</span>
+      <span class="text-lg text-indigo-600"><%= @ideal_weight %> kg</span>
+    </p>
+    <p class="text-sm text-gray-600">
+      This is an estimate based on your gender, age, and height. Consult with a healthcare professional for personalized advice.
+    </p>
+  </div>
+<% end %>

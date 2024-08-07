@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
+
+    <%= turbo_frame_tag "flash-messages" do %>
+      <%= render "shared/flash_messages" %>
+    <% end %>
+
     <main class="container mx-auto mt-12 px-5 flex">
       <%= yield %>
     </main>
