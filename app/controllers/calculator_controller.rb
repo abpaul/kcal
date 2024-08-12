@@ -3,7 +3,7 @@ class CalculatorController < ApplicationController
   end
 
   def calculate
-    calculator = CalorieCalculator.new(
+    calculator = CaloriesCalculator.new(
       params[:gender],
       params[:age],
       params[:weight],
