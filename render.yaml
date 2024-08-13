@@ -1,9 +1,3 @@
-databases:
-  - name: kcal
-    databaseName: kcal
-    user: kcal
-    plan: free
-
 services:
   - type: web
     name: kcal
