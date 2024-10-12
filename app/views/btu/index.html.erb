@@ -1,0 +1,65 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6 text-center">BTU Calculator</h1>
+
+  <%= form_with url: calculate_btu_path, method: :post, class: "max-w-md mx-auto" do |f| %>
+    <div class="mb-4">
+      <%= f.label :room_area, 'Room Area (m²)', class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= f.number_field :room_area, min: 1, step: 0.1, required: true, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :ceiling_height, 'Ceiling Height (m)', class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= f.number_field :ceiling_height, min: 1, step: 0.1, required: true, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :people_count, 'Number of People', class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= f.number_field :people_count, min: 1, required: true, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :room_type, 'Room Type', class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= f.select :room_type, options_for_select([
+        ['Bedroom', 'bedroom'],
+        ['Living Room', 'living_room'],
+        ['Kitchen', 'kitchen'],
+        ['Entire House', 'entire_house'],
+        ['Entire Floor', 'entire_floor']
+      ]), {}, { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :insulation, 'Insulation Condition', class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= f.select :insulation, options_for_select([
+        ['Good', 'good'],
+        ['Average', 'average'],
+        ['Poor', 'poor']
+      ]), {}, { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :sun_exposure, 'Sun Exposure', class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= f.select :sun_exposure, options_for_select([
+        ['Shaded', 'shaded'],
+        ['Average', 'average'],
+        ['Sunny', 'sunny']
+      ]), {}, { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" } %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :climate, 'Climate', class: "block text-sm font-medium text-gray-700 mb-1" %>
+      <%= f.select :climate, options_for_select([
+        ['Cold', 'cold'],
+        ['Temperate', 'temperate'],
+        ['Hot', 'hot']
+      ]), {}, { class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" } %>
+    </div>
+
+    <%= f.submit 'Calculate', class: "w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  <% end %>
+
+  <div id="btu-results" class="mt-8">
+    <%= turbo_frame_tag "btu-result" do %>
+    <% end %>
+  </div>
+</div>

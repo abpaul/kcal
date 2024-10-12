@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   get 'ideal_weight', to: 'ideal_weight#index'
   post 'calculate_ideal_weight', to: 'ideal_weight#calculate', as: 'calculate_ideal_weight'
+
+  get 'btu', to: 'btu#index'
+  post 'calculate_btu', to: 'btu#calculate', as: 'calculate_btu'
 end
